@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.org/hopital"
+           xmlns="http://example.org/hopital"
+           elementFormDefault="qualified">
+
+  <xs:import namespace="http://example.org/patients" schemaLocation="patients.xsd"/>
+  <xs:import namespace="http://example.org/personnel" schemaLocation="personnel.xsd"/>
+
+  <xs:element name="dossierMedical">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pat:patients" minOccurs="0" xmlns:pat="http://example.org/patients"/>
+        <xs:element ref="pers:personnel" minOccurs="0" xmlns:pers="http://example.org/personnel"/>
+        <xs:element name="consultations" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="consultation" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string"/>
+                    <xs:element name="date" type="xs:dateTime"/>
+                    <xs:element name="patientId" type="xs:string"/>
+                    <xs:element name="medecinId" type="xs:string" minOccurs="0"/>
+                    <xs:element name="motif" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

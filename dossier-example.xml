@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dossierMedical xmlns="http://example.org/hopital"
+                xmlns:pat="http://example.org/patients"
+                xmlns:pers="http://example.org/personnel">
+  <pat:patients>
+    <pat:patient>
+      <pat:id>PAT-001</pat:id>
+      <pat:nom>Sow</pat:nom>
+      <pat:prenom>Papa</pat:prenom>
+      <pat:dateNaissance>1990-05-10</pat:dateNaissance>
+      <pat:groupeSanguin>A+</pat:groupeSanguin>
+    </pat:patient>
+  </pat:patients>
+  <pers:personnel>
+    <pers:employe>
+      <pers:id>MED-001</pers:id>
+      <pers:nom>Diallo</pers:nom>
+      <pers:prenom>Awa</pers:prenom>
+      <pers:specialite>Généraliste</pers:specialite>
+    </pers:employe>
+  </pers:personnel>
+  <consultations>
+    <consultation>
+      <id>CONS-001</id>
+      <date>2025-10-01T09:00:00</date>
+      <patientId>PAT-001</patientId>
+      <medecinId>MED-001</medecinId>
+      <motif>Fièvre</motif>
+    </consultation>
+  </consultations>
+</dossierMedical>
